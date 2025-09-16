@@ -117,7 +117,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📧 Contact
 
-Your Name - [Link to your GitHub Profile](<#your-github-profile-url#>)
+Your Name - https://github.com/ankit-0-7
 
-Project Link: [https://github.com/your-username/your-repo-name](https://github.com/your-username/your-repo-name)
+Project Link: https://github.com/ankit-0-7/ThinkLog.git
 
