@@ -1,0 +1,56 @@
+/* Add margin to the main container to account for the fixed navbar */
+.home-container {
+  padding-top: 100px; 
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.post-excerpt {
+  background-color: #1e1e3f;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-excerpt:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.post-excerpt h2 {
+  margin-bottom: 15px;
+  color: #e0c3fc;
+}
+
+.post-excerpt p {
+  color: #c0c0c0;
+  line-height: 1.6;
+}
+
+.post-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.post-actions a, .post-actions button {
+  text-decoration: none;
+  background: none;
+  border: 1px solid #4a4a70;
+  color: #c0c0c0;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.post-actions a:hover, .post-actions button:hover {
+  background-color: #4a4a70;
+  color: #fff;
+}

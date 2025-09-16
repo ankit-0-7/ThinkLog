@@ -1,44 +1,33 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import './Navbar.css';
 
 function Navbar() {
-  const { user, logout } = useAuth();
+  const { user, logout, openLoginModal, openRegisterModal } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = () => {
     logout();
-    navigate('/login');
+    navigate('/');
   };
 
   return (
-    <header>
-      <div className="logo">
-        <Link to="/">BlogPlatform</Link>
+    <header className="navbar-header">
+      <div className="navbar-logo">
+        <Link to="/">ThinkLog</Link>
       </div>
-      <nav>
+      <nav className="navbar-nav">
         <ul>
           {user ? (
-            // If user is logged in, show these links
             <>
-              {/* --- ADD THIS LINE --- */}
-              <li>
-                <Link to="/create-post">Create Post</Link>
-              </li>
-              
-              <li>Hello, {user.name}!</li>
-              <li>
-                <button onClick={handleLogout}>Logout</button>
-              </li>
+              <li><Link to="/create-post">Create Post</Link></li>
+              <li className="navbar-greeting">Hello, {user.name}!</li>
+              <li><button onClick={handleLogout}>Logout</button></li>
             </>
           ) : (
-            // If user is not logged in, show these links
             <>
-              <li>
-                <Link to="/login">Login</Link>
-              </li>
-              <li>
-                <Link to="/register">Register</Link>
-              </li>
+              <li><button onClick={openLoginModal}>Login</button></li>
+              <li><button onClick={openRegisterModal}>Register</button></li>
             </>
           )}
         </ul>

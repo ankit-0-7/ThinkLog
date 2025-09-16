@@ -1,0 +1,78 @@
+.navbar-header {
+  background-color: #1e1e3f;
+  padding: 15px 40px;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  /* --- CHANGE: Switch to CSS Grid for layout --- */
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* 3 columns: Left, Center, Right */
+}
+
+.navbar-logo {
+  /* Place the logo in the center column */
+  grid-column: 2 / 3;
+  justify-self: center; /* Center the logo within its column */
+}
+
+.navbar-logo a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  /* --- CHANGE: Make the logo larger --- */
+  font-size: 32px; 
+}
+
+.navbar-nav {
+  /* Place the nav links in the right-most column */
+  grid-column: 3 / 4;
+  justify-self: end; /* Align the nav to the far right */
+}
+
+.navbar-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.navbar-nav a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav a:hover {
+  color: #e0c3fc;
+}
+
+.navbar-nav button {
+  background-color: transparent;
+  color: #e0e0e0;
+  border: 1px solid #e0e0e0;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-nav button:hover {
+  background-color: #e0c3fc;
+  color: #1e1e3f;
+  border-color: #e0c3fc;
+}
+
+.navbar-greeting {
+  color: #e0e0e0;
+  font-size: 16px;
+}

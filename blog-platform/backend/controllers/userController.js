@@ -65,6 +65,8 @@ const registerUser = async (req, res) => {
  * @access  Public
  */
 const loginUser = async (req, res) => {
+  //  // ADD THIS LINE FOR DEBUGGING
+  // console.log('Backend received this body:', req.body);
   try {
     const { email, password } = req.body;
 

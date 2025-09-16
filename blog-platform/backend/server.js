@@ -13,6 +13,8 @@ const PORT = process.env.PORT || 5000;
 // ADD THIS LINE: It allows your app to accept JSON data in the request body.
 app.use(cors());
 app.use(express.json());
+app.use('/api/posts', require('./routes/postRoutes'));
+
 
 app.get('/', (req, res) => {
   res.send('API is running...');
