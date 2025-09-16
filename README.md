@@ -2,7 +2,7 @@
 
 ThinkLog is a modern, feature-rich blogging application built from the ground up with the MERN stack (MongoDB, Express.js, React, Node.js). It allows users to register, create, manage, and share their thoughts with the world.
 
-![ThinkLog Demo GIF](<#placeholder-for-your-gif-url#>)
+
 
 ---
 
@@ -46,7 +46,7 @@ Make sure you have Node.js and npm installed on your machine.
 
 1.  **Clone the repository:**
     ```sh
-    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+    git clone https://github.com/ankit-0-7/ThinkLog.git
     ```
 2.  **Navigate to the backend and install dependencies:**
     ```sh
