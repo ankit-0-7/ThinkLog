@@ -62,3 +62,62 @@ Make sure you have Node.js and npm installed on your machine.
 ### Environment Variables
 
 You'll need to create a `.env` file in the `backend` directory and add the following variables:
+
+MONGO_URI = "your_mongodb_uri_here"
+JWT_SECRET = "your_super_secret_jwt_key"
+PORT = 5000
+
+
+### Running the Application
+
+1.  **Run the backend server:** (from the `/backend` directory)
+    ```sh
+    npm run server
+    ```
+2.  **Run the frontend client:** (from the `/frontend` directory)
+    ```sh
+    npm run dev
+    ```
+
+---
+
+## 🗺️ API Endpoints
+
+The following API routes have been implemented:
+
+| Method | Endpoint             | Access  | Description                        |
+| :----- | :------------------- | :------ | :--------------------------------- |
+| `POST` | `/api/users/register`| Public  | Register a new user.               |
+| `POST` | `/api/users/login`   | Public  | Authenticate a user and get a token. |
+| `GET`  | `/api/posts`         | Public  | Get all blog posts.                |
+| `POST` | `/api/posts`         | Private | Create a new blog post.            |
+| `GET`  | `/api/posts/:id`     | Public  | Get a single post by its ID.       |
+| `PUT`  | `/api/posts/:id`     | Private | Update a post owned by the user.   |
+| `DELETE`|`/api/posts/:id`     | Private | Delete a post owned by the user.   |
+
+
+---
+
+## 🛤️ Roadmap / Future Features
+
+This project is actively being developed. Here are some of the features planned for the future:
+
+-   [ ] Add a commenting system for posts.
+-   [ ] Create user profile pages.
+-   [ ] Implement post categories and tags for filtering.
+-   [ ] Add file uploads for post cover images.
+-   [ ] Implement a rich text editor (like Quill.js) for post creation.
+-   [ ] Full-text search functionality for posts.
+
+---
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## 📧 Contact
+
+Your Name - [Link to your GitHub Profile](<#your-github-profile-url#>)
+
+Project Link: [https://github.com/your-username/your-repo-name](https://github.com/your-username/your-repo-name)
+
