@@ -117,7 +117,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📧 Contact
 
-Your Name - https://github.com/ankit-0-7
+Ankit Sharma - https://github.com/ankit-0-7
 
 Project Link: https://github.com/ankit-0-7/ThinkLog.git
 
