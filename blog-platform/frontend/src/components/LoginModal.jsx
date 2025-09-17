@@ -13,8 +13,8 @@ function LoginModal() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    // ADD THIS LINE FOR DEBUGGING
-    console.log('Frontend is sending this data:', formData);
+    // // ADD THIS LINE FOR DEBUGGING
+    // console.log('Frontend is sending this data:', formData);
     try {
       const BACKEND_URL = 'https://literate-potato-9rpwrjrqxg5cp4p6-5000.app.github.dev';
       const response = await axios.post(`${BACKEND_URL}/api/users/login`, formData);
