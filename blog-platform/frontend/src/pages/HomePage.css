@@ -54,3 +54,51 @@
   background-color: #4a4a70;
   color: #fff;
 }
+.author-link {
+  color: #c0c0c0;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 5px;
+}
+.author-link:hover {
+  text-decoration: underline;
+}
+/* In HomePage.css, add this at the bottom */
+
+.author-link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 5px;
+  font: inherit;
+  color: #c0c0c0;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.author-link-button:hover {
+  text-decoration: underline;
+}
+/* In HomePage.css */
+.like-button {
+  background: none;
+  border: 1px solid #4a4a70;
+  color: #c0c0c0;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.like-button:hover {
+  background-color: #4a4a70;
+  color: #fff;
+}
+
+/* Style for when the button is 'liked' by the current user */
+.like-button.liked {
+  background-color: #e0245e;
+  border-color: #e0245e;
+  color: #fff;
+}

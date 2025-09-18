@@ -5,24 +5,26 @@ const {
   createPost, 
   getPostById, 
   updatePost, 
-  deletePost 
+  deletePost,
+  getPostsByUser,
+  likePost
 } = require('../controllers/postController');
 const { protect } = require('../middleware/authMiddleware');
 
-// --- Routes for the entire post collection ---
-// GET /api/posts (Get all posts)
-// POST /api/posts (Create a new post)
+// Routes for the entire post collection
 router.route('/')
   .get(getPosts)
   .post(protect, createPost);
 
-// --- Routes for a single, specific post ---
-// GET /api/posts/123 (Get post with ID 123)
-// PUT /api/posts/123 (Update post with ID 123)
-// DELETE /api/posts/123 (Delete post with ID 123)
+router.route('/user/:userId').get(getPostsByUser);
+
+// Routes for a single post by ID
 router.route('/:id')
   .get(getPostById)
   .put(protect, updatePost)
   .delete(protect, deletePost);
+
+// --- FIX: CREATE A SEPARATE ROUTE FOR LIKING A POST ---
+router.route('/:id/like').put(protect, likePost);
 
 module.exports = router;

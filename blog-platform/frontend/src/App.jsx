@@ -7,6 +7,7 @@ import { useAuth } from './context/AuthContext';
 import HomePage from './pages/HomePage';
 import CreatePostPage from './pages/CreatePostPage';
 import EditPostPage from './pages/EditPostPage';
+import UserPostsPage from './pages/UserPostsPage';
 
 function App() {
   const { isLoginModalOpen, isRegisterModalOpen } = useAuth();
@@ -22,6 +23,7 @@ function App() {
           <Route element={<PrivateRoute />}>
             <Route path="/create-post" element={<CreatePostPage />} />
             <Route path="/edit-post/:id" element={<EditPostPage />} />
+            <Route path="/user/:userId" element={<UserPostsPage />} />
           </Route>
         </Routes>
       </div>

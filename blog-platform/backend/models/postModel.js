@@ -1,11 +1,10 @@
-// backend/models/postModel.js
 const mongoose = require('mongoose');
 
 const postSchema = mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: 'User', // This creates the relationship to the User model
+    ref: 'User',
   },
   title: {
     type: String,
@@ -14,6 +13,18 @@ const postSchema = mongoose.Schema({
   content: {
     type: String,
     required: [true, 'Please add content'],
+  },
+  genre: {
+    type: String,
+    required: [true, 'Please add a genre'],
+    enum: ['Tech', 'Lifestyle', 'Health', 'Travel', 'Finance' , 'Education'],
+  },
+  likes: {
+    type: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+    }],
+    default: [],
   },
 }, { timestamps: true });
 
