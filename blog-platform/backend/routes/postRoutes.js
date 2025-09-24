@@ -7,24 +7,26 @@ const {
   updatePost, 
   deletePost,
   getPostsByUser,
-  likePost
+  likePost,
+  getRecommendations // <-- 1. ADD THIS IMPORT
 } = require('../controllers/postController');
 const { protect } = require('../middleware/authMiddleware');
 
-// Routes for the entire post collection
+// --- 2. ADD THE NEW RECOMMENDATION ROUTE ---
+router.route('/recommendations').get(protect, getRecommendations);
+
+// --- Existing Routes ---
 router.route('/')
   .get(getPosts)
   .post(protect, createPost);
 
 router.route('/user/:userId').get(getPostsByUser);
 
-// Routes for a single post by ID
 router.route('/:id')
   .get(getPostById)
   .put(protect, updatePost)
   .delete(protect, deletePost);
 
-// --- FIX: CREATE A SEPARATE ROUTE FOR LIKING A POST ---
 router.route('/:id/like').put(protect, likePost);
 
 module.exports = router;

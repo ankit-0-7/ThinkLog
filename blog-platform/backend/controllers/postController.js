@@ -45,9 +45,6 @@ const getPostsByUser = async (req, res) => {
       .sort({ createdAt: -1 })
       .populate('user', 'name');
     
-    // This log will appear in your backend terminal for debugging
-    console.log(`Found ${posts.length} posts for user ${req.params.userId}`);
-
     res.status(200).json(posts);
   } catch (error){
     res.status(500).json({message: 'Server Error' });
@@ -146,6 +143,73 @@ const likePost = async (req, res) => {
   }
 };
 
+/**
+ * @desc    Get post recommendations for a user
+ * @route   GET /api/posts/recommendations
+ * @access  Private
+ */
+const getRecommendations = async (req, res) => {
+  try {
+    console.log(`\n--- [DEBUG] Starting Recommendations for user: ${req.user.id} ---`);
+
+    const likedPosts = await Post.find({ likes: req.user.id }).select('genre _id');
+    console.log(`[DEBUG] Step 1: Found ${likedPosts.length} liked posts.`);
+    
+    if (likedPosts.length === 0) {
+  console.log('[DEBUG] User has no liked posts. Returning empty array.');
+  return res.json([]); // <-- This is the only change needed
+}
+
+    const genreCounts = {};
+    likedPosts.forEach(post => {
+      genreCounts[post.genre] = (genreCounts[post.genre] || 0) + 1;
+    });
+    console.log('[DEBUG] Step 2: Counted genres:', genreCounts);
+
+    const qualifiedGenres = Object.keys(genreCounts).filter(
+      (genre) => genreCounts[genre] >= 2
+    );
+    console.log('[DEBUG] Step 3: Qualified genres (>= 2 likes):', qualifiedGenres);
+
+    if (qualifiedGenres.length === 0) {
+      console.log('[DEBUG] No genres met the threshold. Returning recent posts as fallback.');
+      const recentPosts = await Post.find({
+        _id: { $nin: likedPosts.map(p => p._id) },
+        user: { $ne: req.user.id }
+      }).sort({ createdAt: -1 }).limit(10).populate('user', 'name');
+      return res.json(recentPosts);
+    }
+
+    const likedPostIds = likedPosts.map(p => p._id);
+    const recommendationQuery = {
+      genre: { $in: qualifiedGenres },
+      _id: { $nin: likedPostIds },
+      user: { $ne: req.user.id }
+    };
+    console.log('[DEBUG] Step 4: Using this query to find posts:', JSON.stringify(recommendationQuery));
+
+    const recommendations = await Post.find(recommendationQuery)
+      .sort({ createdAt: -1 })
+      .limit(10)
+      .populate('user', 'name');
+    console.log(`[DEBUG] Step 5: Found ${recommendations.length} final recommendations.`);
+    console.log('--- [DEBUG] End of Recommendations ---');
+    
+    res.status(200).json(recommendations);
+
+  } catch (error) {
+    console.error('--- [ERROR] in getRecommendations: ---', error);
+    res.status(500).json({ message: 'Server Error' });
+  }
+};
+
 module.exports = {
-  getPosts, getPostById, getPostsByUser, createPost, updatePost, deletePost, likePost,
+  getPosts,
+  getPostById,
+  getPostsByUser,
+  createPost,
+  updatePost,
+  deletePost,
+  likePost,
+  getRecommendations
 };

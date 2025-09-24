@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import './HomePage.css';
+import Recommendations from '../components/Recommendations'; // This import is correct
 
 function HomePage() {
   const [posts, setPosts] = useState([]);
@@ -26,7 +27,6 @@ function HomePage() {
     fetchPosts();
   }, []);
 
-  // --- FIX: The logic inside this function has been restored ---
   const handleDelete = async (postId) => {
     if (window.confirm('Are you sure you want to delete this post?')) {
       if (!user || !user.token) {
@@ -72,6 +72,10 @@ function HomePage() {
 
   return (
     <div className="home-container">
+      {/* --- THIS IS THE FIX --- */}
+      {/* Add the Recommendations component here, before the main post list */}
+      <Recommendations />
+
       <h1>Latest Posts</h1>
       {posts.length > 0 ? (
         posts.map((post) => (

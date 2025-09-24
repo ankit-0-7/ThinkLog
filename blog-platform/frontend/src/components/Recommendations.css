@@ -1,0 +1,43 @@
+.recommendations-container {
+  background-color: #16222A;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  border: 1px solid #3A6073;
+}
+
+.recommendations-container h3 {
+  color: #e0c3fc;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #3A6073;
+  padding-bottom: 10px;
+}
+
+.recommendations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rec-post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rec-post-title {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.rec-post-title:hover {
+  color: #e0c3fc;
+}
+
+.rec-post-author {
+  font-size: 0.85em;
+  color: #a0a0c0;
+  font-style: italic;
+}
