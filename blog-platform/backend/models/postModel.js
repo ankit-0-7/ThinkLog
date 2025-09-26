@@ -27,6 +27,16 @@ const postSchema = mongoose.Schema({
     default: [],
   },
   
-}, { timestamps: true });
+}, { timestamps: true,
+  toJSON: { virtuals: true },
+  toObject: { virtuals: true }
+ });
+ postSchema.virtual('commentCount', {
+  ref: 'Comment',       // The model to use for counting
+  localField: '_id',      // Find comments where our local _id
+  foreignField: 'post', // is in their 'post' field
+  count: true           // And just return the count, not the documents
+});
+
 
 module.exports = mongoose.model('Post', postSchema);

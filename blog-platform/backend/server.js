@@ -23,5 +23,6 @@ app.get('/', (req, res) => {
 // ADD THIS LINE: It connects your user routes to the application.
 app.use('/api/users', userRoutes);
 app.use('/api/posts', require('./routes/postRoutes'));
+app.use('/api/comments', require('./routes/commentRoutes'));
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

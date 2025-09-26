@@ -9,7 +9,8 @@ const getPosts = async (req, res) => {
   try {
     const posts = await Post.find({})
       .sort({ createdAt: -1 })
-      .populate('user', 'name'); 
+      .populate('user', 'name')
+      .populate('commentCount'); 
 
     res.status(200).json(posts);
   } catch (error) {
