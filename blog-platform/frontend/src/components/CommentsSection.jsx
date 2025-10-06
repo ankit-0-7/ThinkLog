@@ -10,7 +10,7 @@ function CommentsSection({ postId }) {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const BACKEND_URL = 'https://literate-potato-9rpwrjrqxg5cp4p6-5000.app.github.dev';
+        const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
         const { data } = await axios.get(`${BACKEND_URL}/api/comments/post/${postId}`);
         setComments(data);
       } catch (error) {
@@ -28,7 +28,7 @@ function CommentsSection({ postId }) {
 
     try {
       const config = { headers: { Authorization: `Bearer ${user.token}` } };
-      const BACKEND_URL = 'https://literate-potato-9rpwrjrqxg5cp4p6-5000.app.github.dev';
+      const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
       const { data } = await axios.post(`${BACKEND_URL}/api/comments`, { content: newComment, postId }, config);
       
       setComments([data, ...comments]);

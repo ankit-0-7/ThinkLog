@@ -16,7 +16,7 @@ function LoginModal() {
     // ADD THIS LINE FOR DEBUGGING
     console.log('Frontend is sending this data:', formData);
     try {
-      const BACKEND_URL = 'https://literate-potato-9rpwrjrqxg5cp4p6-5000.app.github.dev';
+      const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
       const response = await axios.post(`${BACKEND_URL}/api/users/login`, formData);
       if (response.data) {
         login(response.data);

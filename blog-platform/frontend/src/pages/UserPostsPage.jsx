@@ -14,7 +14,7 @@ function UserPostsPage() {
       if (!userId) return;
       setLoading(true);
       try {
-        const BACKEND_URL = 'https://literate-potato-9rpwrjrqxg5cp4p6-5000.app.github.dev';
+        const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
         const response = await axios.get(`${BACKEND_URL}/api/posts/user/${userId}`);
         setPosts(response.data);
         

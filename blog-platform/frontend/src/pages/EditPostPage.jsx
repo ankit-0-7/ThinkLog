@@ -14,7 +14,7 @@ function EditPostPage() {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const BACKEND_URL = 'https://literate-potato-9rpwrjrqxg5cp4p6-5000.app.github.dev';
+        const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
         const { data } = await axios.get(`${BACKEND_URL}/api/posts/${id}`);
         setTitle(data.title);
         setContent(data.content);
@@ -30,7 +30,7 @@ function EditPostPage() {
     const updatedPost = { title, content };
     const config = { headers: { Authorization: `Bearer ${user.token}` } };
     try {
-      const BACKEND_URL = 'https://literate-potato-9rpwrjrqxg5cp4p6-5000.app.github.dev';
+      const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
       await axios.put(`${BACKEND_URL}/api/posts/${id}`, updatedPost, config);
       navigate('/');
     } catch (error) {

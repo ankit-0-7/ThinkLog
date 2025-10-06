@@ -30,7 +30,7 @@ function CreatePostPage() {
     };
 
     try {
-      const BACKEND_URL = 'https://literate-potato-9rpwrjrqxg5cp4p6-5000.app.github.dev';
+      const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
       await axios.post(`${BACKEND_URL}/api/posts`, newPost, config);
       navigate('/');
     } catch (error) {
