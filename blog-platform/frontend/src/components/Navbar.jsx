@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import './Navbar.css';
 import ThemeToggle from './ThemeToggle';
-import SearchBar from './SearchBar'; 
+import SearchBar from './SearchBar';  
 
 function Navbar() {
   const { user, logout, openLoginModal, openRegisterModal } = useAuth();

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Of course. Your project has grown significantly, and your README should reflect all the impressive and complex features you've built. A detailed README is crucial for showcasing your skills.
 
 Here is the complete, updated `README.md` file. It moves your completed tasks to the "Features" list, documents your new API endpoints, and adds new, more advanced ideas to your "Roadmap".
@@ -12,6 +13,13 @@ Copy and paste this entire block of code into your `README.md` file.
 # ThinkLog - A Full-Stack MERN Blog Platform 🚀
 
 ThinkLog is a modern, feature-rich blogging application built from the ground up with the MERN stack (MongoDB, Express.js, React, Node.js). It allows users to register, create, manage, and engage with content through a dynamic and personalized user experience.
+=======
+
+# ThinkLog - A Full-Stack MERN Blog Platform 🚀
+
+ThinkLog is a modern, feature-rich blogging application built from the ground up with the MERN stack (MongoDB, Express.js, React, Node.js). It allows users to register, create, manage, and engage with content through a dynamic and personalized user experience.
+
+>>>>>>> bbbe3635468478c3c3b23c777edb0cd4bd496970
 
 ![ThinkLog Demo GIF](<#placeholder-for-your-new-gif-url#>)
 
@@ -23,6 +31,7 @@ ThinkLog is a modern, feature-rich blogging application built from the ground up
 -   ✅ **Secure Authentication:** Modal-based user registration and login with secure password hashing (`bcrypt`) and JSON Web Token (JWT) authorization.
 -   ✅ **Content Discovery:**
     -   **Full-Text Search:** Instantly find posts by keywords in the title or content, powered by a MongoDB text index.
+<<<<<<< HEAD
     -   **Author Pages:** Click on any author's name to view all of their posts on a dedicated page.
 -   ✅ **User Engagement:**
     -   **Liking System:** Logged-in users can like and unlike posts.
@@ -30,6 +39,15 @@ ThinkLog is a modern, feature-rich blogging application built from the ground up
     -   **Comment Count:** Homepage previews show the number of comments on each post.
 -   ✅ **Personalization:**
     -   **Content Recommendation Engine:** A content-based system suggests posts to logged-in users based on the genres of posts they have previously liked.
+=======
+    -   **Author Pages:** Click on an author's name to view all of their posts on a dedicated page.
+-   ✅ **User Engagement:**
+    -   **Commenting System:** Logged-in users can add and view comments on posts.
+    -   **Liking System:** Users can like and unlike posts.
+    -   **Comment Count:** Homepage previews show the number of comments on each post.
+-   ✅ **Personalization:**
+    -   **Content Recommendation Engine:** A content-based system suggests posts to logged-in users based on the genres of posts they have liked.
+>>>>>>> bbbe3635468478c3c3b23c777edb0cd4bd496970
     -   **Dark/Light Mode Toggle:** A persistent theme switcher for user comfort, built with React Context and CSS Variables.
 -   ✅ **Modern UI/UX:** A sleek, responsive, and aesthetic user interface with smooth transitions and a professional look and feel.
 
@@ -86,7 +104,7 @@ PORT=5000
 
 1.  **Run the backend server:** (from the `/backend` directory)
     ```sh
-    npm run server
+    node server.js
     ```
 2.  **Run the frontend client:** (from the `/frontend` directory)
     ```sh
@@ -138,4 +156,8 @@ Ankit Sharma - [https://github.com/ankit-0-7](https://github.com/ankit-0-7)
 Project Link: [https://github.com/ankit-0-7/ThinkLog.git](https://github.com/ankit-0-7/ThinkLog.git)
 
 ```
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> bbbe3635468478c3c3b23c777edb0cd4bd496970
