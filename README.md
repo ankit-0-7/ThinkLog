@@ -3,7 +3,7 @@
 
 ThinkLog is a modern, feature-rich blogging application built from the ground up with the MERN stack (MongoDB, Express.js, React, Node.js). It allows users to register, create, manage, and engage with content through a dynamic and personalized user experience.
 
-![ThinkLog Demo GIF](<#placeholder-for-your-new-gif-url#>)
+
 
 ---
 
@@ -76,7 +76,7 @@ PORT=5000
 
 1.  **Run the backend server:** (from the `/backend` directory)
     ```sh
-    npm run server
+    node server.js
     ```
 2.  **Run the frontend client:** (from the `/frontend` directory)
     ```sh
