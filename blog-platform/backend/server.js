@@ -12,6 +12,15 @@ const PORT = process.env.PORT || 5000;
 
 // ADD THIS LINE: It allows your app to accept JSON data in the request body.
 app.use(cors());
+
+// Define which origins are allowed
+const corsOptions = {
+  origin: 'https://thinklog-app.onrender.com', // <-- Replace with your frontend's live URL
+  optionsSuccessStatus: 200 
+};
+// Use the new options
+app.use(cors(corsOptions));
+// --- END FIX ---
 app.use(express.json());
 app.use('/api/posts', require('./routes/postRoutes'));
 
