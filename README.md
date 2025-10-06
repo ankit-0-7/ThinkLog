@@ -1,8 +1,4 @@
-Of course. Here is the complete `README.md` file, updated to show that the **Commenting System** and **Full-Text Search** are now completed features.
 
-You can copy and paste this entire block of code directly into your `README.md` file.
-
-````markdown
 # ThinkLog - A Full-Stack MERN Blog Platform 🚀
 
 ThinkLog is a modern, feature-rich blogging application built from the ground up with the MERN stack (MongoDB, Express.js, React, Node.js). It allows users to register, create, manage, and engage with content through a dynamic and personalized user experience.
