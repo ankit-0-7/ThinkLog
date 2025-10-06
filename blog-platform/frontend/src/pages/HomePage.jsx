@@ -35,7 +35,7 @@ function HomePage() {
       }
       try {
         const config = { headers: { Authorization: `Bearer ${user.token}` } };
-        const BACKEND_URL = 'https://literate-potato-9rpwrjrqxg5cp4p6-5000.app.github.dev';
+        const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
         await axios.delete(`${BACKEND_URL}/api/posts/${postId}`, config);
         setPosts(posts.filter((post) => post._id !== postId));
       } catch (error) {
@@ -51,7 +51,7 @@ function HomePage() {
     }
     try {
       const config = { headers: { Authorization: `Bearer ${user.token}` } };
-      const BACKEND_URL = 'https://literate-potato-9rpwrjrqxg5cp4p6-5000.app.github.dev';
+      const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
       const { data } = await axios.put(`${BACKEND_URL}/api/posts/${postId}/like`, {}, config);
       setPosts(posts.map((post) => (post._id === postId ? data : post)));
     } catch (error) {
