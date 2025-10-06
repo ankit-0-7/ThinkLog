@@ -45,45 +45,6 @@ To get a local copy up and running, follow these simple steps.
 Make sure you have Node.js and npm installed on your machine.
 ```sh
 npm install npm@latest -g
-````
-
-### Installation
-
-1.  **Clone the repository:**
-    ```sh
-    git clone [https://github.com/ankit-0-7/ThinkLog.git](https://github.com/ankit-0-7/ThinkLog.git)
-    ```
-2.  **Navigate to the backend and install dependencies:**
-    ```sh
-    cd ThinkLog/backend
-    npm install
-    ```
-3.  **Navigate to the frontend and install dependencies:**
-    ```sh
-    cd ../frontend
-    npm install
-    ```
-
-### Environment Variables
-
-You'll need to create a `.env` file in the `backend` directory and add the following variables:
-
-```
-MONGO_URI="your_mongodb_uri_here"
-JWT_SECRET="your_super_secret_jwt_key"
-PORT=5000
-```
-
-### Running the Application
-
-1.  **Run the backend server:** (from the `/backend` directory)
-    ```sh
-    npm run server
-    ```
-2.  **Run the frontend client:** (from the `/frontend` directory)
-    ```sh
-    npm run dev
-    ```
 
 -----
 
