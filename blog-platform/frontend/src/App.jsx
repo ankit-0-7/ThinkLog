@@ -11,6 +11,7 @@ import CreatePostPage from './pages/CreatePostPage';
 import EditPostPage from './pages/EditPostPage';
 import UserPostsPage from './pages/UserPostsPage';
 import SinglePostPage from './pages/SinglePostPage'; // <-- 1. Import the new page
+import SearchResultsPage from './pages/SearchResultsPage';
 
 function App() {
   const { isLoginModalOpen, isRegisterModalOpen } = useAuth();
@@ -26,6 +27,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/user/:userId" element={<UserPostsPage />} /> {/* <-- 2. Moved to be public */}
           <Route path="/post/:postId" element={<SinglePostPage />} /> {/* <-- 3. Added new route */}
+          <Route path="/search" element={<SearchResultsPage />} />
           
           {/* --- Protected Routes --- */}
           <Route element={<PrivateRoute />}>

@@ -76,3 +76,19 @@
   color: #e0e0e0;
   font-size: 16px;
 }
+/* Make sure this rule for the link is updated */
+.navbar-logo a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 32px;
+  /* These two lines align the image and text */
+  display: flex;
+  align-items: center;
+}
+
+/* Add this new rule for the image itself */
+.navbar-logo-img {
+  height: 40px; /* Adjust size as needed */
+  margin-right: 12px; /* Adds space between the logo and text */
+}

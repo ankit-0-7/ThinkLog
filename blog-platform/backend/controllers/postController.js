@@ -143,6 +143,34 @@ const likePost = async (req, res) => {
     res.status(500).json({ message: 'Server Error' });
   }
 };
+/**
+ * @desc    Search for posts
+ * @route   GET /api/posts/search?q=query
+ * @access  Public
+ */
+const searchPosts = async (req, res) => {
+  try {
+    const searchQuery = req.query.q;
+
+    if (!searchQuery) {
+      return res.status(400).json({ message: 'Search query is required' });
+    }
+    
+    const posts = await Post.find(
+      { $text: { $search: searchQuery } },
+      { score: { $meta: "textScore" } }
+    )
+    .sort({ score: { $meta: "textScore" } })
+    .populate('user', 'name');
+
+    res.status(200).json(posts);
+  } catch (error) {
+    // This will ensure the error is always printed to your terminal
+    console.error('--- SEARCH ERROR ---', error); 
+    res.status(500).json({ message: 'Server Error' });
+  }
+
+};
 
 /**
  * @desc    Get post recommendations for a user
@@ -212,5 +240,6 @@ module.exports = {
   updatePost,
   deletePost,
   likePost,
-  getRecommendations
+  getRecommendations,
+  searchPosts,
 };

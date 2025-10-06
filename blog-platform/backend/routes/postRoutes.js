@@ -8,12 +8,15 @@ const {
   deletePost,
   getPostsByUser,
   likePost,
-  getRecommendations // <-- 1. ADD THIS IMPORT
+  getRecommendations ,
+  searchPosts// <-- 1. ADD THIS IMPORT
 } = require('../controllers/postController');
 const { protect } = require('../middleware/authMiddleware');
 
+
 // --- 2. ADD THE NEW RECOMMENDATION ROUTE ---
 router.route('/recommendations').get(protect, getRecommendations);
+router.route('/search').get(searchPosts);
 
 // --- Existing Routes ---
 router.route('/')
@@ -28,5 +31,6 @@ router.route('/:id')
   .delete(protect, deletePost);
 
 router.route('/:id/like').put(protect, likePost);
+
 
 module.exports = router;

@@ -1,0 +1,19 @@
+.theme-toggle-button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-button:hover {
+  border-color: var(--accent-color);
+  transform: rotate(15deg);
+}
