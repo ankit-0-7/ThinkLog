@@ -72,7 +72,7 @@ PORT = 5000
 
 1.  **Run the backend server:** (from the `/backend` directory)
     ```sh
-    npm run server
+    node server.js
     ```
 2.  **Run the frontend client:** (from the `/frontend` directory)
     ```sh
