@@ -1,10 +1,4 @@
-Of course. Here is the updated `README.md` file with the **Commenting System** and **Full-Text Search** features added to your "Key Features" list and removed from the "Roadmap."
-
------
-
-## Updated `README.md`
-
-Copy and paste this entire block of code into your `README.md` file.
+Of course. Here is the complete `README.md` file, ready for you to copy and paste directly into your project.
 
 ````markdown
 # ThinkLog - A Full-Stack MERN Blog Platform 🚀
@@ -117,12 +111,11 @@ PORT=5000
 
 This project is actively being developed. Here are some of the features planned for the future:
 
-  - [ ] Create user profile pages.
-  - [ ] Implement post categories and tags for filtering.
-  - [ ] Add file uploads for post cover images.
-  - [ ] Implement a rich text editor (like Quill.js) for post creation.
-  - [ ] Pagination for the homepage to handle many posts.
-  - [ ] Notifications for likes and comments.
+  - [ ] **Image Uploads:** Allow users to upload a cover image for their posts.
+  - [ ] **Rich Text Editor:** Implement a WYSIWYG editor (like React-Quill) for a better post-writing experience.
+  - [ ] **Pagination:** Add pagination to the homepage to handle a large number of posts efficiently.
+  - [ ] **Notifications:** Notify users when someone likes or comments on their posts.
+  - [ ] **User Profiles:** Create detailed user profile pages with bios and user-specific stats.
 
 -----
 
