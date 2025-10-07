@@ -11,11 +11,11 @@ const app = express();
 // --- CORRECT MIDDLEWARE ORDER ---
 
 // 1. First, set up CORS with your specific options.
-// const corsOptions = {
-//   origin: 'https://thinklog-2.onrender.com', // Your exact frontend URL
-//   optionsSuccessStatus: 200 
-// };
-// app.use(cors(corsOptions));
+const corsOptions = {
+  origin: 'https://thinklog-2.onrender.com', // Your exact frontend URL
+  optionsSuccessStatus: 200 
+};
+app.use(cors(corsOptions));
 
 // 2. Then, tell Express to parse JSON bodies.
 app.use(express.json());
