@@ -29,3 +29,11 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
+/* --- Add this for Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .modal-content {
+    flex-direction: column;
+    width: 90vw;
+    height: auto;
+  }
+}

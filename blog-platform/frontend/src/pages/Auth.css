@@ -78,3 +78,22 @@
     transform: scale(1);
   }
 }
+/* --- Add this for Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column; /* Stack the panels vertically */
+    width: 90vw; /* Make it 90% of the viewport width */
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* Hide the decorative image panel on mobile */
+  .auth-graphic-panel {
+    display: none;
+  }
+
+  .auth-form-panel {
+    padding: 30px;
+  }
+}

@@ -181,3 +181,15 @@
   background-color: #4a4a70;
   color: #fff;
 }
+/* --- Add this for Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .home-container {
+    padding-top: 150px; /* Adjust for the taller mobile navbar */
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .post-excerpt {
+    padding: 20px;
+  }
+}

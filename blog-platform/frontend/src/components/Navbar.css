@@ -92,3 +92,29 @@
   height: 40px; /* Adjust size as needed */
   margin-right: 12px; /* Adds space between the logo and text */
 }
+/* --- Add this for Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .navbar-header {
+    display: flex; /* Switch back to flexbox for simplicity */
+    flex-direction: column; /* Stack logo and nav vertically */
+    padding: 10px 20px;
+    gap: 10px;
+  }
+
+  /* Hide the search bar on mobile to save space */
+  .navbar-search {
+    display: none;
+  }
+
+  .navbar-logo a {
+    font-size: 24px; /* Make logo slightly smaller */
+  }
+  
+  .navbar-nav ul {
+    gap: 15px; /* Reduce space between links */
+  }
+
+  .navbar-greeting {
+    display: none; /* Hide greeting to save space */
+  }
+}
