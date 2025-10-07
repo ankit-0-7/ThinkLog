@@ -15,7 +15,7 @@ app.use(cors());
 
 // Define which origins are allowed
 const corsOptions = {
-  origin: 'https://thinklog-app.onrender.com', // <-- Replace with your frontend's live URL
+  origin: 'https://thinklog-2.onrender.com', // <-- Replace with your frontend's live URL
   optionsSuccessStatus: 200 
 };
 // Use the new options
