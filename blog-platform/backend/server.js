@@ -1,37 +1,37 @@
 const express = require('express');
-const dotenv = require('dotenv');
-const connectDB = require('./config/db');
-const userRoutes = require('./routes/userRoutes');
 const cors = require('cors');
-
+const dotenv = require('dotenv');
 dotenv.config();
+
+const connectDB = require('./config/db');
 connectDB();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
 
-// ADD THIS LINE: It allows your app to accept JSON data in the request body.
-app.use(cors());
+// --- CORRECT MIDDLEWARE ORDER ---
 
-// Define which origins are allowed
+// 1. First, set up CORS with your specific options.
 const corsOptions = {
-  origin: 'https://thinklog-2.onrender.com', // <-- Replace with your frontend's live URL
+  origin: 'https://thinklog-2.onrender.com', // Your exact frontend URL
   optionsSuccessStatus: 200 
 };
-// Use the new options
 app.use(cors(corsOptions));
-// --- END FIX ---
+
+// 2. Then, tell Express to parse JSON bodies.
 app.use(express.json());
-app.use('/api/posts', require('./routes/postRoutes'));
+
+// --- END MIDDLEWARE ORDER ---
 
 
+// A simple root route to check if the API is running
 app.get('/', (req, res) => {
   res.send('API is running...');
 });
 
-// ADD THIS LINE: It connects your user routes to the application.
-app.use('/api/users', userRoutes);
+// 3. Finally, define all your API routes.
+app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/posts', require('./routes/postRoutes'));
 app.use('/api/comments', require('./routes/commentRoutes'));
 
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
