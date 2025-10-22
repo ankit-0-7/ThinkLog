@@ -1,10 +1,4 @@
 
-
-## Updated `README.md` (Full Code)
-
-Copy and paste this entire block of code into your `README.md` file.
-
-````markdown
 # ThinkLog - A Full-Stack MERN Blog Platform 🚀
 
 ThinkLog is a modern, feature-rich blogging application built from the ground up with the MERN stack (MongoDB, Express.js, React, Node.js). It allows users to register, create, manage, and engage with content through a dynamic and personalized user experience.
