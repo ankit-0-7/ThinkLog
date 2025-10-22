@@ -140,4 +140,4 @@ Project Link: https://github.com/ankit-0-7/ThinkLog.git
 
 ---
 
-Let me know if you'd like this saved to your Page for easy editing or if you want help generating a demo GIF or README badge!
+
